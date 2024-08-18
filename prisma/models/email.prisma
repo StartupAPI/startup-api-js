@@ -1,0 +1,8 @@
+model UserEmails {
+    userId                  Int      @id
+    email                   String
+    emailVerified           Boolean
+    emailVerificationCode   String?
+
+    user                    User @relation(fields: [userId], references: [id])
+}

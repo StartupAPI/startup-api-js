@@ -1,0 +1,22 @@
+model Account {
+    id            Int      @id @default(autoincrement())
+    name          String?
+    active        Boolean  @default(true)
+
+    accountUsers AccountUser[]
+}
+
+model AccountUser {
+    accountId     Int
+    account       Account @relation(fields: [accountId], references: [id])
+    userId        Int
+    user          User @relation(fields: [userId], references: [id])
+    role          Role
+
+    @@unique([accountId, userId])
+}
+
+enum Role {
+    ADMIN
+    USER
+}

@@ -1,0 +1,6 @@
+model IdentityUsername {
+    userId                  Int      @id
+    username                String
+
+    user                    User @relation(fields: [userId], references: [id])
+}

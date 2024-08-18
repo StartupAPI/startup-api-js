@@ -1,0 +1,7 @@
+model TOS {
+    userId                  Int      @id
+    tosVersion              String
+    tosAccepted             DateTime
+
+    user                    User @relation(fields: [userId], references: [id])
+}

@@ -1,0 +1,9 @@
+model IdentityOneTimeToken {
+    userId                  Int      @id
+    token                   String
+    tokenType               String
+    tokenExpires            DateTime
+    tokenUsed               Boolean
+
+    user                    User @relation(fields: [userId], references: [id])
+}

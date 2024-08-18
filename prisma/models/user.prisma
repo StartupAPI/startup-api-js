@@ -1,0 +1,13 @@
+model User {
+    id              Int      @id @default(autoincrement())
+    createdAt       DateTime @default(now())
+    regModule       String
+    name            String?
+
+    accountUsers    AccountUser[]
+    emails          UserEmails[]
+    oneTimeToken    IdentityOneTimeToken?
+    password        IdentityPassword?
+    username        IdentityUsername?
+    tos             TOS?
+}
